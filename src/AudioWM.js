@@ -25,7 +25,7 @@ AudioWM.prototype.createSignalsArray = function(trueFundamental, fundamental, nu
 
     //constructs each overtone structure
     var bitSequence = (overheadZeros + i.toString(2)).slice(-numBits);
-    bitSequence = bitSequence.split('').reverse().join('');
+    bitSequence = bitSequence.split('').join('');
     for (var j=0; j<bitSequence.length; j++)
         real[real.length - (bitSequence.length - j + 1)] = parseInt(bitSequence[j]);
     real[real.length - 1] = 1;
@@ -37,17 +37,3 @@ AudioWM.prototype.createSignalsArray = function(trueFundamental, fundamental, nu
 
   return waveArray;
 }
-AudioWM.prototype.defaultMediaStreamConstraints = {
-  audio: {
-    mandatory: {
-      echoCancellation: false,
-      googEchoCancellation: false,
-      googAutoGainControl: false,
-      googAutoGainControl2: false,
-      googNoiseSuppression: false,
-      googHighpassFilter: false,
-      googTypingNoiseDetection: false
-    }, optional: []
-  },
-  video: false
-};
