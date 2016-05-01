@@ -9,18 +9,16 @@ AudioWM.prototype.createSignalsArray = function(trueFundamental, fundamental, nu
   var length = (frequencyLimit/fundamental);
 
   //create a string with a number of 0s equal to numBits
-  var overheadZeros = new Array(numBits);
-  overheadZeros.fill(0);
-  overheadZeros = overheadZeros.join('');
+  var overheadZeros = Array(numBits).fill(0).join('');
 
   //create sine and cosine arrays
   var real = new Float32Array(length + 1); //+1 for the first argument of fft arrays
   var imag = new Float32Array(real.length);
-  var wave;
 
   //populate waveArray with periodic waves
+  var wave;
   var waveArray = [];
-  var waveArrayLength = Math.pow(2, 5);
+  var waveArrayLength = Math.pow(2, numBits);
   for (var i=0; i<waveArrayLength; i++) {
 
     //constructs each overtone structure

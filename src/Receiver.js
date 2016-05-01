@@ -45,6 +45,9 @@ Receiver.prototype.onMicrophoneReady = function(callback, microphoneStream) {
   callback();
 }
 
+//
+//RECEIVER LOGIC
+
 Receiver.prototype.checkMessage = function() {
 
   //getting intensity values
@@ -88,6 +91,9 @@ Receiver.prototype.getIntensityValues = function() {
 
   return intensities;
 }
+
+//
+//EVENTS HANDLING
 
 Receiver.prototype.manageEventLoop = function() {
 
@@ -158,7 +164,14 @@ Receiver.prototype.isBouncing = function(message) {
   return false;
 }
 
+//
+//UTILS
+
+//my 'Null Object' function (it can look strange, but believe me, it's damn useful!)
 Receiver.prototype.nullFunction = function() { }
+
+//
+//CONSTANTS
 
 Receiver.prototype.defaultMediaStreamConstraints = {
   audio: {

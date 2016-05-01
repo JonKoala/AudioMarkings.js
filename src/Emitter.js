@@ -18,6 +18,10 @@ Emitter.prototype.initialize = function(start, mdc, bitLength) {
   this.signals = this.createSignalsArray(start, mdc, bitLength);
   this.oscillator.frequency.value = mdc;
 }
+
+//
+//EMITTER LOGIC
+
 Emitter.prototype.setMessage = function(message) {
   this.oscillator.setPeriodicWave(this.signals[message]);
 }
@@ -27,6 +31,9 @@ Emitter.prototype.start = function() {
 Emitter.prototype.stop = function() {
   this.oscillator.disconnect(this.context.destination);
 }
+
+//
+//CONSTANTS
 
 Emitter.prototype.defaultMessageParameters = {
   start: 19000,
