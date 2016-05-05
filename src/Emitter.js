@@ -17,6 +17,7 @@ Emitter.prototype.initialize = function(start, mdc, bitLength) {
 
   this.signals = this.createSignalsArray(start, mdc, bitLength);
   this.oscillator.frequency.value = mdc;
+  this.setMessage(0);
 }
 
 //

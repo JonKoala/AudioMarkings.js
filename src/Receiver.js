@@ -102,7 +102,12 @@ Receiver.prototype.manageEventLoop = function() {
     this.loop = this.nullFunction;
     this.bouncingBuffer.fill(NaN);
   } else {
+    var eventLoop = this.loop;
     this.loop = this.checkMessageLoop;
+
+    //start event loop if it wasn't running before
+    if (eventLoop === this.nullFunction)
+      this.loop();
   }
 }
 Receiver.prototype.addMessageEvent = function(message, callback) {
@@ -113,8 +118,6 @@ Receiver.prototype.addMessageEvent = function(message, callback) {
   this.events[message].push(callback);
 
   this.manageEventLoop();
-  if (Object.keys(this.events).length == 1)
-    this.loop();
 }
 Receiver.prototype.removeMessageEvent = function(message, callback) {
 
