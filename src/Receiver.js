@@ -152,7 +152,13 @@ Receiver.prototype.checkMessageLoop = function() {
     this.lastMessage = message;
   }
 
-  setTimeout(this.loop.bind(this), 0);
+  /*TODO: decide if i should limit to only option, or let the user decide
+  **for now, on mobile, this timeout with 100ms is working better than the other options
+  */
+
+  //requestAnimationFrame(this.loop.bind(this));
+  //setTimeout(this.loop.bind(this), 0);
+  setTimeout(this.loop.bind(this), 100);
 }
 Receiver.prototype.isBouncing = function(message) {
 
