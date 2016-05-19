@@ -37,7 +37,7 @@ Emitter.prototype.stop = function() {
 //CONSTANTS
 
 Emitter.prototype.defaultMessageParameters = {
-  start: 19000,
+  start: 18600,
   mdc: 200,
-  bitLength: 5
+  bitLength: 8
 }

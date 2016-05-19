@@ -25,7 +25,7 @@ function Receiver(callback, onError, context, constraints) {
     }}
   );
 
-  //starting with default frequency values ( > 19000Hz)
+  //starting with default frequency values ( > 18600Hz)
   this.initialize();
 
   this.constraints = (constraints instanceof Object) ? constraints : this.defaultMediaStreamConstraints;
@@ -191,7 +191,7 @@ Receiver.prototype.defaultMediaStreamConstraints = {
   video: false
 }
 Receiver.prototype.defaultReferenceFrequencies = {
-  message: [19000, 19200, 19400, 19600, 19800],
-  positive: 20000,
-  negative: 20200
+  message: [18600, 18800, 19000, 19200, 19400, 19600, 19800, 20000],
+  positive: 20200,
+  negative: 20400
 }
