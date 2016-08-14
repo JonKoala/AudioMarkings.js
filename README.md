@@ -1,1 +1,1 @@
-#Audio Watermark for HTML5
+#AudioMarkings.js

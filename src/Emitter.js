@@ -1,13 +1,13 @@
 
 function Emitter(context) {
-  AudioWM.call(this, context);
+  AudioMarkings.call(this, context);
 
   this.oscillator = this.context.createOscillator();
   this.oscillator.start();
 
   this.initialize(); //initializes with default behavior
 }
-Emitter.prototype = Object.create(AudioWM.prototype);
+Emitter.prototype = Object.create(AudioMarkings.prototype);
 Emitter.prototype.initialize = function(start, mdc, bitLength) {
 
   //default behavior

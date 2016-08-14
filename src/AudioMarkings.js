@@ -1,8 +1,8 @@
 
-function AudioWM(context) {
+function AudioMarkings(context) {
   this.context = (context instanceof AudioContext) ? context : new (window.AudioContext || window.webkitAudioContext)();
 }
-AudioWM.prototype.createSignalsArray = function(trueFundamental, fundamental, numBits) {
+AudioMarkings.prototype.createSignalsArray = function(trueFundamental, fundamental, numBits) {
 
   //considering 1 extra bit for the reference frequency
   var frequencyLimit = trueFundamental + (numBits*fundamental);

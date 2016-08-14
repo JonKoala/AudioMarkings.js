@@ -1,6 +1,6 @@
 
 function Receiver(callback, onError, context, constraints) {
-  AudioWM.call(this, context);
+  AudioMarkings.call(this, context);
 
   this.analyser = this.context.createAnalyser();
   this.analyser.smoothingTimeConstant = 0;
@@ -39,7 +39,7 @@ function Receiver(callback, onError, context, constraints) {
     getUserMedia.call(navigator, this.constraints, this.onMicrophoneReady.bind(this, callback), onError);
   }
 }
-Receiver.prototype = Object.create(AudioWM.prototype);
+Receiver.prototype = Object.create(AudioMarkings.prototype);
 Receiver.prototype.initialize = function(messageFrequencies, referencePositive, referenceNegative) {
   this.messageFrequencies = (messageFrequencies instanceof Array) ? messageFrequencies : this.defaultReferenceFrequencies.message;
   this.referencePositive = (isNaN(referencePositive)) ? this.defaultReferenceFrequencies.positive : referencePositive;
